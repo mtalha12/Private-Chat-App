@@ -40,13 +40,13 @@ class SigInPage extends Component {
         console.log({ firstName })
         return (
             <div style={{ height: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-                <div style={{ height: '600px', width: '400px', border: 'solid black 1px', marginTop: '10%' }}>
+                <div style={{ height: '600px', width: '400px', border: 'solid black 1px', marginTop: '5%' }}>
 
 
                     <div style={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'column', height: '100%', }}>
 
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <h3>SignUp</h3>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2px', }}>
+                            <h3 style={{ fontSize: '22px', }}>SIGN UP</h3>
                         </div>
 
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -114,10 +114,10 @@ class SigInPage extends Component {
                             </div>
                         </div>
 
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '12px' }}>
                             <CustomButton
                                 title="Sign Up"
-                                customStyle={{ backgroundColor: '#1E1E1E', width: '100%', color: 'white' }}
+                                customStyle={{ backgroundColor: '#707070', width: '100%', color: 'white' }}
                             />
                         </div>
                     </div>
