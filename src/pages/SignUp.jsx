@@ -10,7 +10,7 @@ import InputField from '../common/InputField';
 import CustomButton from '../common/CustomButton';
 
 
-class SigInPage extends Component {
+class SigUpPage extends Component {
     constructor() {
         super();
         this.state = {
@@ -30,17 +30,16 @@ class SigInPage extends Component {
         })
     }
 
-    // genderChange = (event) => {
-    //     console.log(event.target.value)
-    //     this.setState({ gender: event.target.value })
-    // }
+    gotoSignIn = () => {
+        this.props.history.push("/")
+    }
 
     render() {
         const { firstName, lastName, email, password, confirmPassword, gender } = this.state
         console.log({ firstName })
         return (
             <div style={{ height: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-                <div style={{ height: '600px', width: '400px', border: 'solid black 1px', marginTop: '5%' }}>
+                <div style={{ height: '600px', width: '480px', border: 'solid black 1px', marginTop: '5%' }}>
 
 
                     <div style={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'column', height: '100%', }}>
@@ -50,64 +49,69 @@ class SigInPage extends Component {
                         </div>
 
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <label style={{ width: '40%', paddingTop: '3px' }}>First Name</label>
+                            <label style={{ width: '35%', paddingTop: '3px' }}>First Name</label>
                             <InputField
                                 placeholder="First Name"
                                 type="text"
                                 name="firstName"
                                 value={firstName}
                                 onChange={(e) => this.ChangeHandler(e)}
+                                customStyle={{ width: '250px' }}
                             />
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <label style={{ width: '40%', paddingTop: '3px' }}>Last Name</label>
+                            <label style={{ width: '35%', paddingTop: '3px' }}>Last Name</label>
                             <InputField
                                 placeholder="Last Name"
                                 type="text"
                                 name="lastName"
                                 value={lastName}
                                 onChange={(e) => this.ChangeHandler(e)}
+                                customStyle={{ width: '250px' }}
                             />
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <label style={{ width: '40%', paddingTop: '3px' }}>Email</label>
+                            <label style={{ width: '35%', paddingTop: '3px' }}>Email</label>
                             <InputField
                                 placeholder="Email"
                                 type="email"
                                 name="email"
                                 value={email}
                                 onChange={(e) => this.ChangeHandler(e)}
+                                customStyle={{ width: '250px' }}
                             />
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <label style={{ width: '40%', paddingTop: '3px' }}>Password</label>
+                            <label style={{ width: '35%', paddingTop: '3px' }}>Password</label>
                             <InputField
                                 placeholder="Password"
                                 type="password"
                                 name="firstName"
                                 value={password}
                                 onChange={(e) => this.ChangeHandler(e)}
+                                customStyle={{ width: '250px' }}
                             />
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <label style={{ width: '40%', paddingTop: '3px' }}>Confirm Password</label>
+                            <label style={{ width: '35%', paddingTop: '3px' }}>Confirm Password</label>
                             <InputField
                                 placeholder="Confirm Password"
                                 type="password"
                                 name="confirmPassword"
                                 value={confirmPassword}
                                 onChange={(e) => this.ChangeHandler(e)}
+                                customStyle={{ width: '250px' }}
                             />
                         </div>
 
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-                            <div style={{ width: '40%', }}>
+                            <div style={{ width: '35%', }}>
                                 <label>Gender</label>
                             </div>
-                            <div style={{}}>
-                                <RadioGroup aria-label="gender" name="gender" value={gender} onChange={this.ChangeHandler} style={{ display: 'flex', flexDirection: 'row-reverse', justifyContent: 'center', alignItems: 'center' }}>
-                                    <FormControlLabel value="female" control={<Radio size="small" color="default" />} label="Female" />
+                            <div style={{ width: '50%' }}>
+                                <RadioGroup aria-label="gender" name="gender" value={gender} onChange={this.ChangeHandler} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
                                     <FormControlLabel value="male" control={<Radio size="small" color="default" />} label="Male" />
+                                    <FormControlLabel value="female" control={<Radio size="small" color="default" />} label="Female" />
                                     {/* <FormControlLabel value="other" control={<Radio />} label="Other" /> */}
                                     {/* <FormControlLabel value="disabled" disabled control={<Radio />} label="(Disabled option)" /> */}
                                 </RadioGroup>
@@ -118,6 +122,7 @@ class SigInPage extends Component {
                             <CustomButton
                                 title="Sign Up"
                                 customStyle={{ backgroundColor: '#707070', width: '100%', color: 'white' }}
+                                onClick={this.gotoSignIn}
                             />
                         </div>
                     </div>
@@ -127,4 +132,4 @@ class SigInPage extends Component {
     }
 }
 
-export default SigInPage
+export default SigUpPage

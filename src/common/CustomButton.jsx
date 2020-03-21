@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const CustomButton = ({ color, startIcon, endIcon, title, customStyle }) => {
+const CustomButton = ({ color, startIcon, endIcon, title, customStyle, onClick }) => {
     const classes = useStyles();
 
     return (
@@ -28,6 +28,7 @@ const CustomButton = ({ color, startIcon, endIcon, title, customStyle }) => {
             startIcon={startIcon}
             endIcon={endIcon}
             style={customStyle}
+            onClick={onClick}
         >
             {title}
         </Button>
